@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "./Button.jsx";
 
 /* product list */
 
@@ -6,7 +7,7 @@ function ProductList() {
   return (
     <>
       <h1>Product List</h1>
-      <FilterableProductTable products={PRODUCTS}></FilterableProductTable>;
+      <FilterableProductTable products={PRODUCTS}></FilterableProductTable>
     </>
   );
 }
@@ -35,7 +36,7 @@ function FilterableProductTable({ products }) {
 function ProductCategoryRow({ category }) {
   return (
     <tr scope="row">
-      <th colSpan="2" style={{ color: "green" }}>
+      <th colSpan="5" style={{ color: "green" }}>
         <h4>{category}</h4>
       </th>
     </tr>
@@ -53,6 +54,13 @@ function ProductRow({ product }) {
     <tr scope="row">
       <td scope="col">{name}</td>
       <td scope="col">{product.price}</td>
+      <td scope="col" width={500}>
+        <AddItem
+          stocked={product.stocked}
+        ></AddItem>
+      </td>
+      <td scope="col">tbc</td>
+      <td scope="col">Doesn't work</td>
     </tr>
   );
 }
@@ -86,6 +94,9 @@ function ProductTable({ products, filterText, inStockOnly }) {
         <tr>
           <th>Name</th>
           <th>Price</th>
+          <th>Action</th>
+          <th>Qty</th>
+          <th>Total Price</th>
         </tr>
       </thead>
       <tbody>{rows}</tbody>
@@ -117,6 +128,30 @@ function SearchBar({
         Only show products in stock
       </label>
     </form>
+  );
+}
+
+function AddItem({ stocked }) {
+  const [quantity, setQuantity] = useState(0);
+  return stocked ? (
+    <>
+      <Button
+        name={"Add To Cart"}
+        handleClick= {() => console.log("quantity: "+quantity)}
+        onClick={() => console.log("quantity: "+quantity)}
+      ></Button>
+      <input
+        type="number"
+        defaultValue={0}
+        onChange={(e) => {
+          setQuantity(e.target.value);
+        }}
+      ></input>
+    </>
+  ) : (
+    <span>
+      <i>Item out of stock</i>
+    </span>
   );
 }
 
