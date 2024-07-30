@@ -31,6 +31,18 @@ function Table() {
     { name: "Anom", age: 19, gender: "Male" },
     { name: "Megha", age: 19, gender: "Female" },
     { name: "Subham", age: 25, gender: "Male" },
+    { name: "Anom", age: 19, gender: "Male" },
+    { name: "Megha", age: 19, gender: "Female" },
+    { name: "Subham", age: 25, gender: "Male" },
+    { name: "Anom", age: 19, gender: "Male" },
+    { name: "Megha", age: 19, gender: "Female" },
+    { name: "Subham", age: 25, gender: "Male" },
+    { name: "Anom", age: 19, gender: "Male" },
+    { name: "Megha", age: 19, gender: "Female" },
+    { name: "Subham", age: 25, gender: "Male" },
+    { name: "Anom", age: 19, gender: "Male" },
+    { name: "Megha", age: 19, gender: "Female" },
+    { name: "Subham", age: 25, gender: "Male" },
   ];
 
   return (
