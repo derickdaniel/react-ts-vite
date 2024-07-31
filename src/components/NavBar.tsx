@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/react.svg"; // with import
 
 const NavBar = () => {
+  console.log("NavBar componenet");
   return (
     <>
       <NavLink className="navbar-brand" to="https://www.google.com">
@@ -30,6 +31,11 @@ const NavBar = () => {
           <li className="nav-item">
             <NavLink className="nav-link" to="/list">
               List
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/listGrp">
+              List Group
             </NavLink>
           </li>
           <li className="nav-item">

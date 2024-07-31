@@ -9,6 +9,7 @@
     }
   ],
   "compilerOptions": {
-    "allowJs": true
+    "allowJs": true,
+    "noImplicitAny": false // so set empty array with any type and assign later
   }
 }

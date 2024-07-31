@@ -7,6 +7,7 @@ interface Props {
 }
 
 function ListGroup(props: Props) {
+  console.log("LG componenent");
   // HOOK
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
@@ -17,7 +18,7 @@ function ListGroup(props: Props) {
       <ul className="list-group">
         {props.items.map((item, index) => (
           <li
-            key={item}
+            key={index}
             className={
               selectedIndex == index
                 ? "list-group-item active"

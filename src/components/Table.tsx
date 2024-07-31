@@ -1,63 +1,25 @@
-let count = 0;
+const colNames = ["New York", "San Francisco", "London", "Paris", "Albania"]
 
-function Table() {
-  //backend call
-  
-  const reqBody = {
-    username: "User",
-    password: "User",
-  };
+interface Props {
+  data: any[];
+}
 
-  fetch("http://localhost:8080/authenticate/login", {
-    // mode: "no-cors",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json; charset=utf-8",
-    },
-    method: "POST",
-    body: JSON.stringify(reqBody),
-  })
-    .then((res) => res.json())
-    .then((output) => {
-      count += 1;
-      console.log(count);
-      console.log(output.token);
-    })
-    .catch((error) =>
-      console.error("The following error occurred during the update", error)
-    );
-
-  const data = [
-    { name: "Anom", age: 19, gender: "Male" },
-    { name: "Megha", age: 19, gender: "Female" },
-    { name: "Subham", age: 25, gender: "Male" },
-    { name: "Anom", age: 19, gender: "Male" },
-    { name: "Megha", age: 19, gender: "Female" },
-    { name: "Subham", age: 25, gender: "Male" },
-    { name: "Anom", age: 19, gender: "Male" },
-    { name: "Megha", age: 19, gender: "Female" },
-    { name: "Subham", age: 25, gender: "Male" },
-    { name: "Anom", age: 19, gender: "Male" },
-    { name: "Megha", age: 19, gender: "Female" },
-    { name: "Subham", age: 25, gender: "Male" },
-    { name: "Anom", age: 19, gender: "Male" },
-    { name: "Megha", age: 19, gender: "Female" },
-    { name: "Subham", age: 25, gender: "Male" },
-  ];
-
+function Table(props: Props) {
   return (
     <table className="table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Gender</th>
+          {colNames.map((col) => {
+            return <th>{col}</th>;
+          })}
         </tr>
       </thead>
-      {data.map((val, key) => {
+      {props.data.map((val, index) => {
         return (
           <tbody>
-            <tr key={key}>
+            <tr key={val.id}>
+              <td>{index}</td>
+              <td>{val.id}</td>
               <td>{val.name}</td>
               <td>{val.age}</td>
               <td>{val.gender}</td>
