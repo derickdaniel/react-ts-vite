@@ -13,7 +13,7 @@ const NavBar = () => {
           height="24"
           className="d-inline-block align-text-top"
         />
-        Developer Book
+        Developer Book 1.0
       </NavLink>
       {/* Menu bar  */}
       <nav className="navbar bg-body-tertiary">
