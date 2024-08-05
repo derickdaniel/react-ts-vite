@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { useTable } from "react-table";
 
 const DevIssueTable = ({ data }: any) => {
@@ -21,13 +21,19 @@ const DevIssueTable = ({ data }: any) => {
     useTable({ columns, data });
 
   return (
-    <div className="table-responsive table-body">
-      <table {...getTableProps()} className="table table-hover table-striped table-bordered">
-        <thead  className="table-dark text-center">
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+    // className="table-responsive table-body"
+    <div>
+      <table
+        {...getTableProps()}
+        className="table table-hover table-striped table-bordered"
+      >
+        <thead className="table-dark text-center">
+          {headerGroups.map((headerGroup, i) => (
+            <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id + i}>
+              {headerGroup.headers.map((column, i) => (
+                <th {...column.getHeaderProps()} key={column.id + i}>
+                  {column.render("Header")}
+                </th>
               ))}
             </tr>
           ))}
@@ -36,9 +42,11 @@ const DevIssueTable = ({ data }: any) => {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()} className="text-center">
-                {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+              <tr {...row.getRowProps()} className="text-center" key={row.id}>
+                {row.cells.map((cell, i) => (
+                  <td {...cell.getCellProps()} key={i}>
+                    {cell.render("Cell")}
+                  </td>
                 ))}
               </tr>
             );
