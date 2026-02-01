@@ -28,3 +28,20 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+
+Installation Guide
+------------------
+1.	Install node JS
+2.	Inside Project folder -
+--npm install
+--npm run dev
+3.	In case for below error - 
+running-scripts-is-disabled-on-this-system
+4.	First, Open PowerShell with Run as Administrator.
+5.	Then, run this command in PowerShell
+6.	Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+7.	After that type Y and press Enter.
+8.	Ref - https://stackoverflow.com/questions/64633727/how-to-fix-running-scripts-is-disabled-on-this-system.
+
