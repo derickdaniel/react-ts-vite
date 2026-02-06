@@ -35,8 +35,8 @@ Installation Guide
 ------------------
 1.	Install node JS
 2.	Inside Project folder -
-  --npm install
-  --npm run dev
+   1. npm install
+   2. npm run dev
 4.	In case for below error - 
 running-scripts-is-disabled-on-this-system
 5.	First, Open PowerShell with Run as Administrator.
